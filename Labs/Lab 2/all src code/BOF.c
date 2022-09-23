@@ -8,8 +8,8 @@ int bufferOverflow(const char * str)
    char buffer[12];
    /* This line has a buffer overflow vulnerability. */
    
-   char* firstAddressPointer = buffer;
-   printf("first address pointer: %p\nsss", firstAddressPointer);
+   //char* firstAddressPointer = buffer;
+   //printf("first address pointer: %p\n", firstAddressPointer);
    strcpy(buffer, str);
    return 1;
 }

